@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5480:5432"
+
+  api:
+    build: ./SLCM_API
+    depends_on:
+      - db
+    ports:
+      - "3002:3000"
+    env_file:
+      - ./.env
+
+  resend:
+    build: ./RESEND_CODE
+    depends_on:
+      - api
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./.env
+  
+
