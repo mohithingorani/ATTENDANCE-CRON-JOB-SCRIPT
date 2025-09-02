@@ -62,6 +62,8 @@ async function sendMail(attendance: any[]) {
     </tr>
     <tr>
       <td>AI4146</td>
+	<td> BIG DATA ANALYTICS</td>
+
         <td> ${attendance[5].Present} </td>
       <td>${attendance[5].Absent} </td>
       <td>${attendance[5].Total} </td>
@@ -71,7 +73,7 @@ async function sendMail(attendance: any[]) {
     <tr>
       <td>AI4170</td>
       <td>INDUSTRIAL TRAINING</td>
-           <td> ${attendance[6].Present} </td>
+      <td> ${attendance[6].Present} </td>
       <td>${attendance[6].Absent} </td>
       <td>${attendance[6].Total} </td>
       <td>${attendance[6].Percentage}% </td>
